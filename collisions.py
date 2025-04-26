@@ -19,7 +19,7 @@ def restitute(m1,m2,u1,u2,e): #Assumes two particles are approaching before coll
        qvector=array([[(m1*u1)-(m2*u2)],[e*(u1+u2)]])
        inverse=linalg.inv(operator)
        avector=dot(inverse,qvector)
-       v1=avector[0][0]
+       v1=-1*avector[0][0]
        v2=avector[1][0]
        l=[v1,v2]     
        
