@@ -6,7 +6,7 @@ def restitute(m1,m2,u1,u2,e): #Assumes two particles are approaching before coll
     m1=float(m1)
     m2=float(m2)
     u1=float(u1)
-    u2=float(u2)
+    u2=float(u2)*-1
     e=float(e)
 
     if m1==m2:
