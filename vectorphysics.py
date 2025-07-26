@@ -1,6 +1,13 @@
+from math import *
 class Vector:
     def __init__(self,vector:list[int,float]):
         self.vector=vector
+
+    def magnitude(self):
+        total=0
+        for a in self.vector():
+            total+=a**2
+        return total        
 
     def __add__(self,other):
         ret=[]
@@ -34,9 +41,18 @@ class Vector:
             if len(self.vector)==len(other.vector):
                 for a in range(0,len(other.vector),1):
                     total+=other.vector[a]*self.vector[a]
-                return total    
+                return total
+
+    def angleBetween(self,other):
+        options=[]
+        if isinstance(self,Vector) and isinstance(other,Vector):
+            if len(self.vector)==len(other.vector):
+                options.append(cos(a.dot(b)/(a.magnitude*b.magnitude)))
+                options.append(pi-cos(a.dot(b)/(a.magnitude*b.magnitude)))
+               
+
 
 
 a=Vector([1,2,1])
 b=Vector([2,3,4])
-print(a.dot(b))                
+print()                
