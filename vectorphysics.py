@@ -5,9 +5,9 @@ class Vector:
 
     def magnitude(self):
         total=0
-        for a in self.vector():
+        for a in self.vector:
             total+=a**2
-        return total        
+        return sqrt(total)        
 
     def __add__(self,other):
         ret=[]
@@ -47,12 +47,14 @@ class Vector:
         options=[]
         if isinstance(self,Vector) and isinstance(other,Vector):
             if len(self.vector)==len(other.vector):
-                options.append(cos(a.dot(b)/(a.magnitude*b.magnitude)))
-                options.append(pi-cos(a.dot(b)/(a.magnitude*b.magnitude)))
+                options.append(acos(a.dot(b)/(a.magnitude()*b.magnitude())))
+                options.append(pi-acos(a.dot(b)/(a.magnitude()*b.magnitude())))
+
+        return options        
                
 
 
 
 a=Vector([1,2,1])
 b=Vector([2,3,4])
-print()                
+print(((a.angleBetween(b)[0])/(2*pi)*360))             
